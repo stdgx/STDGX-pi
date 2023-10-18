@@ -1,0 +1,60 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.head-text {
+    padding: 20px;
+   text-align: left;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.card {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 0 10px;
+    width: 150px;
+    text-align: center;
+}
+
+.card:hover {
+    border: 2px solid rgb(107, 40, 107);
+}
+
+.card-image {
+    height: 80px;
+    width: 80px;
+}
+
+.card-button {
+    border: 2px solid blue;
+    height: 40px;
+    cursor: pointer;
+}
+
+.card-button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.continuar {
+    margin-top: 50px;
+    text-align: right;
+    padding-right: 80px;
+}
+
+.continuar-button {
+    border: 2px solid blue;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+}
