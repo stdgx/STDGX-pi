@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f6f6f6;
+    overflow-y: hidden;
+}
+
+.drop {
+    border: 2px dashed #999;
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+}
+
+.drop:hover {
+    background-color: #f0f0f0;
+}
+
+.loading {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
