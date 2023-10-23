@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+:root {
+  --red: red,
+  --yellow: yellow,
+  --green: green,
+  --blue: blue,
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Yusei Magic", sans-serif;
+}
+
+ol,
+ul {
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+}
