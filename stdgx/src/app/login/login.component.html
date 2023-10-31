@@ -1,1 +1,43 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="left">
+      <span class="title">STDGX</span>
+      <span class="subtitle">Storage Tool Data Graphics X</span>
+    </div>
+
+    <div class="right">
+      <div class="form">
+        <label class="input-label">
+          <span class="input-span">Endereço de Email</span>
+          <div class="input-container">
+            <i class="bi bi-envelope-fill"></i>
+            <input type="email" class="input" placeholder="--> Insira seu email" autofocus />
+          </div>
+        </label>
+        <label class="input-label">
+          <span class="input-span">Senha</span>
+          <div class="input-container">
+            <i class="bi bi-lock-fill"></i>
+            <input type="password" class="input" placeholder="--> Insira sua senha" />
+          </div>
+        </label>
+        <button class="btn bt-login" (click)="login()">Entrar</button>
+        <footer>
+          <span>não tem uma conta?
+            <a class="footer-link" (click)="register()">Cadastre-se!</a></span>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

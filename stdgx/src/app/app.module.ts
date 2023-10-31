@@ -8,6 +8,8 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UploadComponent } from './upload/upload.component';
 import { InterfaceComponent } from './interface/interface.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { InterfaceComponent } from './interface/interface.component';
     RegisterComponent,
     DashboardComponent,
     UploadComponent,
-    InterfaceComponent
+    InterfaceComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

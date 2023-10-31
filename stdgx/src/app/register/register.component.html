@@ -1,1 +1,50 @@
-<p>register works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+</head>
+
+<body>
+  <div class="register-container">
+    <div class="left">
+      <div class="form">
+        <label class="input-label">
+          <span class="input-span">Endereço de Email</span>
+          <div class="input-container">
+            <i class="bi bi-envelope-fill"></i>
+            <input type="email" class="input" placeholder="--> Insira seu email" autofocus />
+          </div>
+        </label>
+        <label class="input-label">
+          <span class="input-span">Senha</span>
+          <div class="input-container">
+            <i class="bi bi-lock-fill"></i>
+            <input type="password" class="input" placeholder="--> Insira sua senha" />
+          </div>
+        </label>
+        <label class="input-label">
+          <span class="input-span">Permissão</span>
+          <div class="input-container">
+            <i class="bi bi-key-fill"></i>
+            <input type="text" class="input" placeholder="--> Insira sua permissão" />
+          </div>
+        </label>
+        <button class="btn bt-login">Cadastrar!</button>
+        <footer>
+          <span>Já tem uma conta?
+            <a class="footer-link" (click)="login()">Entrar!</a></span>
+        </footer>
+      </div>
+    </div>
+
+    <div class="right">
+      <span class="title">STDGX</span>
+      <span class="subtitle">Storage Tool Data Graphics X</span>
+    </div>
+  </div>
+</body>
+
+</html>

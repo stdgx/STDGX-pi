@@ -1,0 +1,16 @@
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.drop {
+  border: 2px dashed #999;
+  padding: 50px;
+  text-align: center;
+}
+
+.drop:hover {
+  background-color: #f0f0f0;
+}

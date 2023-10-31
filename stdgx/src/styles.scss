@@ -1,25 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 :root {
-  --red: red,
-  --yellow: yellow,
-  --green: green,
-  --blue: blue,
+  //Bootstrap
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #eeeeee;
+  --bs-green: #a7c957;
+  --bs-green2: #6a994e;
+  --bs-yellow1: #f7ca6d;
+  --bs-yellow2: #fece05;
+  --bs-red1: #85182a;
+  --bs-red2: #650000;
+  --bs-purple1: #e2dbff;
+  --bs-purple2: #7b2cbf;
+  --bs-purple3: #5a189a;
+  --bs-purple4: #3c096c;
+  --bs-purple5: #18002e;
+  //Angular
+  --black: #000;
+  --white: #fff;
+  --gray: #eeeeee;
+  --green: #a7c957;
+  --green2: #6a994e;
+  --yellow1: #f7ca6d;
+  --yellow2: #fece05;
+  --red1: #85182a;
+  --red2: #650000;
+  --purple1: #e2dbff;
+  --purple2: #7b2cbf;
+  --purple3: #5a189a;
+  --purple4: #3c096c;
+  --purple5: #18002e;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Yusei Magic", sans-serif;
+  font-family: 'Bree Serif', serif;
 }
 
-ol,
-ul {
-  padding: 0;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #fff;
+  background-color: var(--white);
 }
