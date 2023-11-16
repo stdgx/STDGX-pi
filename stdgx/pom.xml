@@ -51,6 +51,11 @@
             <version>4.4.0</version>
         </dependency>
         <dependency>
+            <groupId>org.jboss.aerogear</groupId>
+            <artifactId>aerogear-otp-java</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.dhatim</groupId>
             <artifactId>fastexcel</artifactId>
             <version>0.15.7</version>
