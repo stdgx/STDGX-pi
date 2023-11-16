@@ -1,43 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="login-container">
+  <video autoplay muted loop id="myVideo">
+    <source src="assets/STDGX.mp4" type="video/mp4">
+  </video>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-</head>
-
-<body>
-  <div class="login-container">
-    <div class="left">
-      <span class="title">STDGX</span>
-      <span class="subtitle">Storage Tool Data Graphics X</span>
-    </div>
-
-    <div class="right">
-      <div class="form">
-        <label class="input-label">
-          <span class="input-span">Endereço de Email</span>
-          <div class="input-container">
-            <i class="bi bi-envelope-fill"></i>
-            <input type="email" class="input" placeholder="--> Insira seu email" autofocus />
-          </div>
-        </label>
-        <label class="input-label">
-          <span class="input-span">Senha</span>
-          <div class="input-container">
-            <i class="bi bi-lock-fill"></i>
-            <input type="password" class="input" placeholder="--> Insira sua senha" />
-          </div>
-        </label>
-        <button class="btn bt-login" (click)="login()">Entrar</button>
-        <footer>
-          <span>não tem uma conta?
-            <a class="footer-link" (click)="register()">Cadastre-se!</a></span>
-        </footer>
+  <div class="container">
+    <div class="box">
+      <span></span>
+      <div class="content">
+        <form [formGroup]="lForm" class="form" (ngSubmit)="login(); $event.preventDefault()">
+          <label class="input-label">
+            <label class="text">Endereço de Email</label>
+            <div class="input-container">
+              <i class="bi bi-envelope-fill"></i>
+              <input type="email" class="input" placeholder="--> Insira seu email" autofocus formControlName="login" />
+            </div>
+          </label>
+          <label class="input-label">
+            <label class="text">Senha</label>
+            <div class="input-container">
+              <i class="bi bi-lock-fill"></i>
+              <input type="password" class="input" placeholder="--> Insira sua senha" formControlName="password" />
+            </div>
+          </label>
+          <input class="btn bt-login" type="submit" value="Entrar">
+          <footer>
+            <label>não tem uma conta?
+              <a class="link">Cadastre-se!</a>
+            </label>
+          </footer>
+        </form>
       </div>
     </div>
   </div>
-</body>
-
-</html>
+</div>

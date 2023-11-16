@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 
 import { Chart } from 'chart.js/auto';
+import { UserDTO } from "src/models/user.dto";
+import { StorageService } from "src/services/storage.service";
+import { UserService } from "src/services/user.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -14,23 +17,28 @@ export class DashboardComponent implements OnInit {
   public chart3: any;
   public chart4: any;
 
+  userData!: UserDTO;
+
+  constructor(private user: UserService, private storage: StorageService) {
+
+  }
+
   ngOnInit(): void {
-    this.createChart();
+    this.user.findUsuarioByEmail(this.storage.getLocalStorage()?.login!).subscribe((response) => {
+      this.userData = response;
+      this.createChart();
+    })
   }
 
   createChart() {
     this.chart1 = new Chart('MyChart1', {
       type: 'bar',
       data: {
-        labels: [
-          'Pão',
-          'Café',
-          'Cappuccino',
-        ],
+        labels: Object.keys(JSON.parse(this.userData.customerAttributeJSON)),
         datasets: [
           {
             label: 'Padaria',
-            data: ['4', '1', '1'],
+            data: Object.values(JSON.parse(this.userData.customerAttributeJSON)),
             backgroundColor: [
               'rgba(75,0,130,0.7)',
               'rgba(75,0,130,0.7)',
@@ -50,6 +58,7 @@ export class DashboardComponent implements OnInit {
         responsive: false,
       },
     });
+    this.chart1.update();
     this.chart2 = new Chart('MyChart2', {
       type: 'bar',
       data: {
@@ -114,23 +123,12 @@ export class DashboardComponent implements OnInit {
     this.chart3 = new Chart('MyChart3', {
       type: 'bar',
       data: {
-        labels: [
-          'A',
-          'B',
-          'C',
-          'D',
-          'E',
-          'F',
-          'G',
-          'H',
-          'I',
-          'J',
-        ],
+        labels: Object.keys(JSON.parse(this.userData.customerAttributeJSON)),
         datasets: [
           {
             indexAxis: 'y',
             label: 'Title',
-            data: ['27', '30', '1', '12', '7', '3', '24', '19', '4', '18'],
+            data: Object.values(JSON.parse(this.userData.customerAttributeJSON)),
             backgroundColor: [
               'rgba(75,0,130,0.7)',
               'rgba(75,0,130,0.7)',

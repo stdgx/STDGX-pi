@@ -16,7 +16,7 @@
 .title {
   font-size: 7rem;
   background: linear-gradient(to right, var(--purple3) 0%, var(--purple5) 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Audiowide', sans-serif;
 }
@@ -24,7 +24,7 @@
 .subtitle {
   font-size: 3rem;
   background: linear-gradient(to right, var(--purple5) 0%, var(--purple3) 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Audiowide', sans-serif;
 }

@@ -6,11 +6,13 @@
 }
 
 .drop {
-  border: 2px dashed #999;
+  border: 2px dashed #fff;
   padding: 50px;
   text-align: center;
+  color: #8f8f8f;
 }
 
 .drop:hover {
-  background-color: #f0f0f0;
+  background-color: #18002e;
+  color: #fff;
 }
