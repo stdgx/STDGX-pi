@@ -1,8 +1,9 @@
 package br.com.fatec.stdgx.models.user;
 
-import br.com.fatec.stdgx.utils.JpaConverterJson;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,7 +25,7 @@ public class User implements UserDetails {
     private String login;
     private String password;
     private UserRole role;
-    @Convert(converter = JpaConverterJson.class)
+    @JdbcTypeCode(SqlTypes.JSON)
     private String customerAttributeJSON;
 
     public User(String login, String password, UserRole role) {
