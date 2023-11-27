@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { Chart } from 'chart.js/auto';
+import { interval } from "rxjs";
 import { UserDTO } from "src/models/user.dto";
 import { StorageService } from "src/services/storage.service";
 import { UserService } from "src/services/user.service";
@@ -18,12 +19,17 @@ export class DashboardComponent implements OnInit {
   public chart4: any;
 
   userData!: UserDTO;
+  labelBaby!: any[];
+  dataBaby!: any[];
 
   constructor(private user: UserService, private storage: StorageService) {
 
   }
 
   ngOnInit(): void {
+    this.labelBaby = ['value1', 'value2', 'value3', 'value4', 'value5', 'value6', 'value7'];
+    this.dataBaby = [1, 10, 5, 2, 20, 30, 45];
+    this.graphicRandom(3000);
     this.user.findUsuarioByEmail(this.storage.getLocalStorage()?.login!).subscribe((response) => {
       this.userData = response;
       this.createChart();
@@ -40,14 +46,16 @@ export class DashboardComponent implements OnInit {
             label: 'Padaria',
             data: Object.values(JSON.parse(this.userData.customerAttributeJSON)),
             backgroundColor: [
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
+              'rgba(80,0,0,0.5)',
+              'rgba(96,0,0,0.5)',
+              'rgba(112,0,0,0.5)',
+              'rgba(128,0,0,0.5)',
             ],
             borderColor: [
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
+              'rgb(80,0,0)',
+              'rgb(96,0,0)',
+              'rgb(112,0,0)',
+              'rgb(128,0,0)',
             ],
             borderWidth: 3,
             borderRadius: 3
@@ -62,54 +70,23 @@ export class DashboardComponent implements OnInit {
     this.chart2 = new Chart('MyChart2', {
       type: 'bar',
       data: {
-        labels: [
-          'A',
-          'B',
-          'C',
-          'D',
-          'E',
-          'F',
-          'G',
-          'H',
-          'I',
-          'J',
-        ],
+        labels: this.labelBaby,
         datasets: [
           {
-            label: 'Title',
-            data: ['2', '7', '15', '4', '19', '38', '25', '12', '47', '65'],
+            indexAxis: 'y',
+            label: 'Chart',
+            data: this.dataBaby,
             backgroundColor: [
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
+              'rgba(71,137,75,0.5)',
+              'rgba(94,167,88,0.5)',
+              'rgba(139,220,120,0.5)',
+              'rgba(152,210,119,0.5)',
             ],
             borderColor: [
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
+              'rgb(71,137,75)',
+              'rgb(94,167,88)',
+              'rgb(139,220,120)',
+              'rgb(152,210,119)',
             ],
             borderWidth: 3,
             borderRadius: 3
@@ -123,44 +100,23 @@ export class DashboardComponent implements OnInit {
     this.chart3 = new Chart('MyChart3', {
       type: 'bar',
       data: {
-        labels: Object.keys(JSON.parse(this.userData.customerAttributeJSON)),
+        labels: this.labelBaby,
         datasets: [
           {
             indexAxis: 'y',
-            label: 'Title',
-            data: Object.values(JSON.parse(this.userData.customerAttributeJSON)),
+            label: 'Chart',
+            data: this.dataBaby,
             backgroundColor: [
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
+              'rgba(27,45,72,0.5)',
+              'rgba(44,69,107,0.5)',
+              'rgba(60,100,159,0.5)',
+              'rgba(71,121,196,0.5)',
             ],
             borderColor: [
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
+              'rgb(27,45,72)',
+              'rgb(44,69,107)',
+              'rgb(60,100,159)',
+              'rgb(71,121,196)',
             ],
             borderWidth: 3,
             borderRadius: 3
@@ -172,65 +128,50 @@ export class DashboardComponent implements OnInit {
       },
     });
     this.chart4 = new Chart('MyChart4', {
-      type: 'line',
+      type: 'bar',
       data: {
-        labels: [
-          'A',
-          'B',
-          'C',
-          'D',
-          'E',
-          'F',
-          'G',
-          'H',
-          'I',
-          'J',
-        ],
+        labels: this.labelBaby,
         datasets: [
           {
-            label: 'Title',
-            data: ['5', '8', '9', '2', '7', '20', '27', '19', '18', '4'],
+            label: 'Chart',
+            data: this.dataBaby,
             backgroundColor: [
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
-              'rgba(75,0,130,0.7)',
+              'rgba(249,214,14,0.5)',
+              'rgba(250,222,62,0.5)',
+              'rgba(251,230,110,0.5)',
+              'rgba(253,239,159,0.5)',
             ],
             borderColor: [
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
-              'rgba(75,0,130)',
+              'rgb(249,214,14)',
+              'rgb(250,222,62)',
+              'rgb(255,230,96)',
+              'rgb(253,239,159)',
             ],
             borderWidth: 3,
           },
         ],
       },
       options: {
-        responsive: false
+        responsive: false,
       },
     });
   }
-}
 
+  getRandomInt(max: number) {
+    return Math.floor(Math.random() * max);
+  }
+
+  async graphicRandom(intervalMilisecond: number): Promise<void> {
+    interval(intervalMilisecond).subscribe(() => {
+      this.randomizeData(this.chart2)
+      this.randomizeData(this.chart3)
+      this.randomizeData(this.chart4)
+    });
+  }
+
+  randomizeData(chart: any) {
+    let newDataBaby = this.dataBaby.map(x => Math.floor(Math.random() * 10) + 1);
+    chart.data.datasets[0].data = newDataBaby;
+    chart.update();
+  };
+}

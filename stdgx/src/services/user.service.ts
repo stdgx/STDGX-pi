@@ -12,4 +12,10 @@ export class UserService {
       `http://localhost:8080/object/data/${email}`
     );
   }
+
+  uploadXlsx(file: File, email: string): Observable<any> {
+    let formParams = new FormData();
+    formParams.append('file', file)
+    return this.http.post<any>(`http://localhost:8080/excel/upload/${email}`, formParams);
+  }
 }

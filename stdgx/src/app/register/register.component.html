@@ -1,37 +1,35 @@
 <div class="register-container">
-  <div class="left">
-    <div class="form">
-      <label class="input-label">
-        <span class="input-span">Endereço de Email</span>
-        <div class="input-container">
-          <i class="bi bi-envelope-fill"></i>
-          <input type="email" class="input" placeholder="--> Insira seu email" autofocus />
-        </div>
-      </label>
-      <label class="input-label">
-        <span class="input-span">Senha</span>
-        <div class="input-container">
-          <i class="bi bi-lock-fill"></i>
-          <input type="password" class="input" placeholder="--> Insira sua senha" />
-        </div>
-      </label>
-      <label class="input-label">
-        <span class="input-span">Permissão</span>
-        <div class="input-container">
-          <i class="bi bi-key-fill"></i>
-          <input type="text" class="input" placeholder="--> Insira sua permissão" />
-        </div>
-      </label>
-      <button class="btn bt-login">Cadastrar!</button>
-      <footer>
-        <span>Já tem uma conta?
-          <a class="footer-link" (click)="login()">Entrar!</a></span>
-      </footer>
-    </div>
-  </div>
+  <video autoplay muted loop id="myVideo">
+    <source src="assets/STDGX.mp4" type="video/mp4">
+  </video>
 
-  <div class="right">
-    <span class="title">STDGX</span>
-    <span class="subtitle">Storage Tool Data Graphics X</span>
+  <div class="container">
+    <div class="box">
+      <span></span>
+      <div class="content">
+        <form class="form">
+          <label class="input-label">
+            <label class="text">Endereço de Email</label>
+            <div class="input-container">
+              <i class="bi bi-envelope-fill"></i>
+              <input type="email" class="input" placeholder="--> Insira seu email" autofocus formControlName="login" />
+            </div>
+          </label>
+          <label class="input-label">
+            <label class="text">Senha</label>
+            <div class="input-container">
+              <i class="bi bi-lock-fill"></i>
+              <input type="password" class="input" placeholder="--> Insira sua senha" formControlName="password" />
+            </div>
+          </label>
+          <input class="btn bt-login" type="submit" value="Cadastrar">
+          <footer>
+            <label>já tem uma conta?
+              <a class="link" [routerLink]="['/']">Entre!</a>
+            </label>
+          </footer>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
